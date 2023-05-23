@@ -18,80 +18,151 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/fnameHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/FirstName"
+        app:layout_constraintEnd_toEndOf="@+id/FirstName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FirstName" />
 
     <EditText
         android:id="@+id/FirstName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="25dp"
-        android:hint="FirstName"
+        android:background="@drawable/editext"
+        android:paddingLeft="10dp"
+        app:layout_constraintBottom_toTopOf="@id/lnameHint"
         app:layout_constraintTop_toBottomOf="@id/imageView"
-        tools:layout_editor_absoluteX="87dp" />
+        tools:layout_editor_absoluteX="25dp" />
+
+    <TextView
+        android:id="@+id/lnameHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/LastName"
+        app:layout_constraintEnd_toEndOf="@+id/LastName"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="@+id/LastName" />
 
     <EditText
         android:id="@+id/LastName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:hint="LastName"
+        android:background="@drawable/editext"
+        android:paddingLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/FirstName"
-        tools:layout_editor_absoluteX="79dp" />
+        tools:layout_editor_absoluteX="25dp" />
+
+    <TextView
+        android:id="@+id/emailHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/Email1"
+        app:layout_constraintEnd_toEndOf="@+id/Email1"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="@+id/Email1" />
 
     <EditText
         android:id="@+id/Email1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:hint="Email"
+        android:background="@drawable/editext"
+        android:paddingLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/LastName"
         tools:layout_editor_absoluteX="71dp" />
+
+    <TextView
+        android:id="@+id/password1Hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/Password1"
+        app:layout_constraintEnd_toEndOf="@+id/Password1"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="@+id/Password1" />
 
     <EditText
         android:id="@+id/Password1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:hint="Password"
+        android:background="@drawable/editext"
+        android:paddingLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/Email1"
         tools:layout_editor_absoluteX="71dp" />
+
+    <TextView
+        android:id="@+id/cpassword1Hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/ConfirmPassword"
+        app:layout_constraintEnd_toEndOf="@+id/ConfirmPassword"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="@+id/ConfirmPassword" />
 
     <EditText
         android:id="@+id/ConfirmPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:hint="Confirm Password"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
-        tools:layout_editor_absoluteX="71dp" />
+        android:background="@drawable/editext"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/Password1" />
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="Please fill out the needed information"
         app:layout_constraintBottom_toTopOf="@+id/confirm1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPassword"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/confirm1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="70dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:layout_marginBottom="32dp"
         android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,18 +19,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/text_birthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
         android:layout_marginLeft="25dp"
-        android:text="Birthday"
+        android:layout_marginTop="76dp"
+        android:textColor="@color/black"
+        android:text="Birthday (1/1/200)"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <TextView
+        android:id="@+id/dayHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Day"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/monthHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="4dp"
+        android:text="Month"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/dayHint" />
+
+    <TextView
+        android:id="@+id/yearHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Year"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toEndOf="@+id/monthHint" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -48,16 +87,20 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_weight="2"
-            android:hint="Day"
+            android:background="@drawable/editext"
+            android:paddingLeft="10dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="373dp" />
+
+
 
         <EditText
             android:id="@+id/Month1"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_weight="2"
-            android:hint="Month"
+            android:background="@drawable/editext"
+            android:paddingLeft="10dp"
             tools:layout_editor_absoluteX="133dp"
             tools:layout_editor_absoluteY="373dp" />
 
@@ -66,7 +109,8 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:hint="Year"
+            android:background="@drawable/editext"
+            android:paddingLeft="10dp"
             tools:layout_editor_absoluteX="270dp"
             tools:layout_editor_absoluteY="373dp" />
 
@@ -75,28 +119,42 @@
     <EditText
         android:id="@+id/Age1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="54dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="48dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
         android:background="@drawable/editext"
-        android:hint="Age"
+        app:layout_constraintBottom_toTopOf="@+id/Submission"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.489" />
+
+    <TextView
+        android:id="@+id/ageHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/Age1"
+        app:layout_constraintEnd_toEndOf="@+id/Age1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Age1" />
 
     <Button
         android:id="@+id/Submission"
         android:layout_width="match_parent"
-        android:layout_height="54dp
-"
+        android:layout_height="54dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/button_login"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="70dp"
-        android:background="@drawable/button_login"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
