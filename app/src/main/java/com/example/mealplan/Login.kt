@@ -3,18 +3,14 @@ package com.example.mealplan
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.EditText
 import android.widget.CheckBox
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.FirebaseApp
 import android.widget.Toast
-
-import android.util.Log
 
 class Login : AppCompatActivity() {
 
@@ -112,7 +108,7 @@ class Login : AppCompatActivity() {
 
         val buttonClick = findViewById<Button>(R.id.registerButton)
         buttonClick.setOnClickListener {
-            val intent = Intent(this, RegistrationPage::class.java)
+            val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
     }

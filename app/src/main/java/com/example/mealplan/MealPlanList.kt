@@ -2,7 +2,6 @@ package com.example.mealplan
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -11,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 
-class MealPlan1 : AppCompatActivity() {
+class MealPlanList : AppCompatActivity() {
 
     private lateinit var listView: ListView
     private lateinit var adapter: ArrayAdapter<String>
@@ -20,7 +19,7 @@ class MealPlan1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_meal_plan1)
+        setContentView(R.layout.activity_meal_plan_list)
 
         listView = findViewById(R.id.firstListView)
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1)
@@ -81,7 +80,7 @@ class MealPlan1 : AppCompatActivity() {
     }
 
     private fun moveToNextActivity() {
-        val intent = Intent(this, MealPlan3::class.java)
+        val intent = Intent(this, MealPlanInfo::class.java)
         startActivity(intent)
         finish()
     }

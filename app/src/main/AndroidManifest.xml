@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MealPlan"
         tools:targetApi="31">
         <activity
-            android:name=".Testing"
+            android:name=".MealList"
             android:exported="false" />
         <activity
             android:name=".GetWeeklyAverage"
@@ -26,10 +26,10 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".FirstloginAge"
+            android:name=".UserAge"
             android:exported="false" />
         <activity
-            android:name=".FirstLogin"
+            android:name=".UserBmi"
             android:exported="false" />
         <activity
             android:name=".Chart"
@@ -38,22 +38,22 @@
             android:name=".WeightCompare"
             android:exported="false" />
         <activity
-            android:name=".MealPlan3"
+            android:name=".MealPlanInfo"
             android:exported="false" />
         <activity
-            android:name=".MealPlan2"
+            android:name=".MealPlanDate"
             android:exported="false" />
         <activity
             android:name=".MainMenu"
             android:exported="false" />
         <activity
-            android:name=".RegistrationPage"
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".MealPlan1"
+            android:name=".MealPlanList"
             android:exported="false" />
         <activity
             android:name=".Breakfast"

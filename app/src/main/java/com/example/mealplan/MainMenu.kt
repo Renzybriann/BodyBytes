@@ -25,7 +25,7 @@ class  MainMenu : AppCompatActivity() {
         }
         val buttonClick3 = findViewById<Button>(R.id.TestButton)
         buttonClick3.setOnClickListener {
-            val intent3 = Intent(this, Testing::class.java)
+            val intent3 = Intent(this, MealList::class.java)
             startActivity(intent3)
         }
 
@@ -33,7 +33,7 @@ class  MainMenu : AppCompatActivity() {
 
         val buttonClick = findViewById<Button>(R.id.mealButton1)
         buttonClick.setOnClickListener {
-            val intent = Intent(this, MealPlan1::class.java)
+            val intent = Intent(this, MealPlanList::class.java)
             startActivity(intent)
         }
 

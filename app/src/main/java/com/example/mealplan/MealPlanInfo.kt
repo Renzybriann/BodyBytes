@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class MealPlan3 : AppCompatActivity() {
+class MealPlanInfo : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var textView: TextView
@@ -17,7 +17,7 @@ class MealPlan3 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_meal_plan3)
+        setContentView(R.layout.activity_meal_plan_info)
 
         // Initialize Firebase components
         auth = FirebaseAuth.getInstance()
@@ -74,7 +74,7 @@ class MealPlan3 : AppCompatActivity() {
                                         }
 
                                         // Create an ArrayAdapter to display the list items in the ListView
-                                        val adapter = ArrayAdapter(this@MealPlan3, android.R.layout.simple_list_item_1, dataList)
+                                        val adapter = ArrayAdapter(this@MealPlanInfo, android.R.layout.simple_list_item_1, dataList)
 
                                         // Set the adapter to the ListView
                                         listView.adapter = adapter

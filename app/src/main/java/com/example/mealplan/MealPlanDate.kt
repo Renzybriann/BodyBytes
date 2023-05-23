@@ -3,18 +3,14 @@ package com.example.mealplan
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Toast
-import android.widget.ListView
 import android.widget.Button
 import android.widget.EditText
-import android.content.Context
-import android.content.SharedPreferences.Editor
 import android.content.Intent
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-public class MealPlan2 : AppCompatActivity() {
+public class MealPlanDate : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
 
@@ -29,7 +25,7 @@ public class MealPlan2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_meal_plan2)
+        setContentView(R.layout.activity_meal_plan_date)
 
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -224,7 +220,7 @@ public class MealPlan2 : AppCompatActivity() {
 
 
     private fun moveToNextActivity() {
-        val intent = Intent(this, Testing::class.java)
+        val intent = Intent(this, MealList::class.java)
         startActivity(intent)
     }
 }

@@ -1,11 +1,8 @@
 package com.example.mealplan
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -14,10 +11,9 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import java.util.*
 
-class Testing : AppCompatActivity() {
+class MealList : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var searchView: SearchView
     private lateinit var firestore: FirebaseFirestore
@@ -27,11 +23,11 @@ class Testing : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_testing)
+        setContentView(R.layout.activity_meal_list)
 
         val buttonClick = findViewById<Button>(R.id.PressToContinue)
         buttonClick.setOnClickListener {
-            val intent = Intent(this, MealPlan2::class.java)
+            val intent = Intent(this, MealPlanDate::class.java)
             startActivity(intent)
         }
 

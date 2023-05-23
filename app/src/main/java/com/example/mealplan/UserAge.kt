@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class FirstloginAge : AppCompatActivity() {
+class UserAge : AppCompatActivity() {
 
     // initialize Firebase authentication and Firestore database
 
@@ -24,7 +24,7 @@ class FirstloginAge : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_firstlogin_age)
+        setContentView(R.layout.activity_user_age)
 
 
         birthdayDayEditText = findViewById(R.id.Days1)

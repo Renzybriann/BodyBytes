@@ -5,23 +5,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.EditText
-import android.widget.CheckBox
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.FirebaseApp
-import android.widget.Toast
-import java.text.SimpleDateFormat
-import java.util.*
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import com.google.firebase.firestore.FirebaseFirestore
-import java.time.Month
 import android.view.View
 
-class FirstLogin : AppCompatActivity() {
+class UserBmi : AppCompatActivity() {
 
 
     private lateinit var weightEditText: EditText
@@ -36,7 +25,7 @@ class FirstLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first_login)
+        setContentView(R.layout.activity_user_bmi)
 
 
         weightEditText = findViewById(R.id.InsertWeight)
@@ -80,7 +69,7 @@ class FirstLogin : AppCompatActivity() {
                 .document("bmidata")
                 .set(userInfo)
                 .addOnSuccessListener {
-                    val intent = Intent(this, FirstloginAge::class.java)
+                    val intent = Intent(this, UserAge::class.java)
                     startActivity(intent)
                     finish()
                 }

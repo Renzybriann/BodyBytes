@@ -3,35 +3,27 @@ package com.example.mealplan
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.EditText
-import android.widget.CheckBox
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.content.Intent
-import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import android.text.TextUtils
 import android.widget.Toast
-// Declare the UI elements
-private lateinit var firstNameEditText: EditText
-private lateinit var lastNameEditText: EditText
-private lateinit var emailEditText: EditText
-private lateinit var passwordEditText: EditText
-private lateinit var confirmPasswordEditText: EditText
-private lateinit var registerButton: Button
-
-// Declare Firebase Authentication and Firestore instances
-private lateinit var auth: FirebaseAuth
-private lateinit var db: FirebaseFirestore
 
 
-class RegistrationPage : AppCompatActivity() {
+class Register : AppCompatActivity() {
+    // Declare the UI elements
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
+    private lateinit var firstNameEditText: EditText
+    private lateinit var lastNameEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var passwordEditText: EditText
+    private lateinit var confirmPasswordEditText: EditText
+    private lateinit var registerButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration_page)
+        setContentView(R.layout.activity_register)
 
         // Initialize the UI elements
         firstNameEditText = findViewById(R.id.FirstName)
@@ -105,7 +97,7 @@ class RegistrationPage : AppCompatActivity() {
                                     .addOnCompleteListener { loginTask ->
                                         if (loginTask.isSuccessful) {
                                             // Start the main activity
-                                            val intent = Intent(this,FirstLogin::class.java)
+                                            val intent = Intent(this,UserBmi::class.java)
                                             startActivity(intent)
                                             finish()                                        } else {
                                             // Display an error message
