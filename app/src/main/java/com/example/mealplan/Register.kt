@@ -21,6 +21,7 @@ class Register : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
     private lateinit var registerButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -97,18 +98,28 @@ class Register : AppCompatActivity() {
                                     .addOnCompleteListener { loginTask ->
                                         if (loginTask.isSuccessful) {
                                             // Start the main activity
-                                            val intent = Intent(this,UserBmi::class.java)
+                                            val intent = Intent(this, UserBmi::class.java)
                                             startActivity(intent)
-                                            finish()                                        } else {
+                                            finish()
+                                        } else {
                                             // Display an error message
+                                            val errorMessage = loginTask.exception?.message ?: "Login failed"
                                             Toast.makeText(
                                                 applicationContext,
-                                                "Error: ${loginTask.exception?.message}",
+                                                errorMessage,
                                                 Toast.LENGTH_SHORT
                                             ).show()
                                         }
                                     }
                             }
+                    } else {
+                        // Display an error message if registration fails
+                        val errorMessage = task.exception?.message ?: "Registration failed"
+                        Toast.makeText(
+                            applicationContext,
+                            errorMessage,
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
         }
