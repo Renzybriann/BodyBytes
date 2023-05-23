@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "657003350727",
+    "project_id": "potato123-5be50",
+    "storage_bucket": "potato123-5be50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657003350727:android:4e4945b2637cb307decce2",
+        "android_client_info": {
+          "package_name": "com.example.mealplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657003350727-och39ck8h36o0btm9scuqo54mmdufram.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7RGmh4ZZ3j8nI1EV1fRJSm6zC96o_RPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657003350727-och39ck8h36o0btm9scuqo54mmdufram.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657003350727:android:434b648d425f88bfdecce2",
+        "android_client_info": {
+          "package_name": "ken.projects.infit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657003350727-och39ck8h36o0btm9scuqo54mmdufram.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7RGmh4ZZ3j8nI1EV1fRJSm6zC96o_RPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657003350727-och39ck8h36o0btm9scuqo54mmdufram.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

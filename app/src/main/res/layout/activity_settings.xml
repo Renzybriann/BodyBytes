@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+
+  <TextView
+      android:id="@+id/FIRSTNAMES1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="First Name"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/LASTNAMES2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/FIRSTNAMES1"
+      android:text="Last Name"
+      android:textSize="16sp" />
+
+  <TextView
+      android:id="@+id/FULLNAMES"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/LASTNAMES2"
+      android:text="Full Name"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/AGE1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/LASTNAMES2"
+      android:text="Age"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/DAYS1_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/AGE1"
+      android:text="Day"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/MONTHS1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/DAYS1_1"
+      android:text="Month"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/YEARS1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/MONTHS1"
+      android:text="Year"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/BMI"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/YEARS1"
+      android:text="BMI"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/HEIGHT"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/BMI"
+      android:text="Height"
+      android:textSize="16sp" />
+
+
+  <TextView
+      android:id="@+id/WEIGHT"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/HEIGHT"
+      android:text="Weight"
+      android:textSize="16sp" />
+
+
+  <Button
+      android:id="@+id/LOGOUT"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/WEIGHT"
+      android:text="Logout" />
+
+</RelativeLayout>
