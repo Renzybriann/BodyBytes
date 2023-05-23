@@ -7,7 +7,7 @@
 
 
     <Button
-        android:id="@+id/PressToContinue"
+        android:id="@+id/add_meal_plan_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/PressToContinue"
+        android:layout_below="@id/add_meal_plan_btn"
         android:queryHint="Search Food"
         android:iconifiedByDefault="false" />
 

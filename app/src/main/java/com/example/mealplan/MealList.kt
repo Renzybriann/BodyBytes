@@ -26,7 +26,7 @@ class MealList : AppCompatActivity() {
         setContentView(R.layout.activity_meal_list)
         supportActionBar?.hide()
 
-        val buttonClick = findViewById<Button>(R.id.PressToContinue)
+        val buttonClick = findViewById<Button>(R.id.add_meal_plan_btn)
         buttonClick.setOnClickListener {
             val intent = Intent(this, MealPlanDate::class.java)
             startActivity(intent)
