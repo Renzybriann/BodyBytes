@@ -37,7 +37,7 @@ class Register : AppCompatActivity() {
         // Initialize Firebase Authentication and Firestore instances
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
-
+// HELLO
         // Set up the register button click listener
         registerButton.setOnClickListener {
             // Get the values from the UI elements
