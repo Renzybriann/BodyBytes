@@ -9,20 +9,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ListView
-        android:id="@+id/secondListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
-    <LinearLayout
-        android:id="@+id/bottomButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
-
-        <!-- Add any additional buttons or components here -->
-    </LinearLayout>
-
 </RelativeLayout>
