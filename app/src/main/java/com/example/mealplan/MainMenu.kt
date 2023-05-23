@@ -16,7 +16,7 @@ class  MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         supportActionBar?.hide()
-
+        supportActionBar?.hide()
         auth = FirebaseAuth.getInstance()
 
         loadFragment(HomeFragment())

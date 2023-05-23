@@ -25,7 +25,7 @@ class  MainActivity : AppCompatActivity() {
             }
         }
         thread.start()
-
+//r
        // val buttonClick1 = findViewById<Button>(R.id.button7)
        // buttonClick1.setOnClickListener {
        //     val intent2 = Intent(this, WeightCompare::class.java)2

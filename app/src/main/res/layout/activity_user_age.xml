@@ -75,10 +75,11 @@
     <EditText
         android:id="@+id/Age1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/editext"
         android:hint="Age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,10 +88,12 @@
     <Button
         android:id="@+id/Submission"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp
+"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="70dp"
+        android:background="@drawable/button_login"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
