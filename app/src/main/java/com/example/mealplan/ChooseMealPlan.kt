@@ -10,7 +10,7 @@ class ChooseMealPlan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_meal_plan)
-
+        supportActionBar?.hide()
 
         val buttonClick = findViewById<Button>(R.id.AddMeal)
        buttonClick.setOnClickListener {

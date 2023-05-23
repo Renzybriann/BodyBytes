@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MealPlan"
         tools:targetApi="31">
         <activity
+            android:name=".LoginOrSignup"
+            android:exported="false" />
+        <activity
             android:name=".MealList"
             android:exported="false" />
         <activity

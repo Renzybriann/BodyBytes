@@ -25,7 +25,7 @@ class UserAge : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_age)
-
+        supportActionBar?.hide()
 
         birthdayDayEditText = findViewById(R.id.Days1)
         birthdayMonthEditText = findViewById(R.id.Month1)

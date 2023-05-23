@@ -25,7 +25,7 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        supportActionBar?.hide()
 
         // Check if user is already logged in
         auth = FirebaseAuth.getInstance()
@@ -103,13 +103,6 @@ class Login : AppCompatActivity() {
                         Toast.makeText(baseContext, "Authentication failed!", Toast.LENGTH_SHORT).show()
                     }
                 }
-        }
-
-
-        val buttonClick = findViewById<Button>(R.id.registerButton)
-        buttonClick.setOnClickListener {
-            val intent = Intent(this, Register::class.java)
-            startActivity(intent)
         }
     }
 }

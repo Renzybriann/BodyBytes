@@ -19,7 +19,7 @@ class  MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
-                val newIntent = Intent(this@MainActivity, Login::class.java)
+                val newIntent = Intent(this@MainActivity, LoginOrSignup::class.java)
                 startActivity(newIntent)
                 finish()
             }

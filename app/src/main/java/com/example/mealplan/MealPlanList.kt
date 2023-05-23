@@ -20,6 +20,7 @@ class MealPlanList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meal_plan_list)
+        supportActionBar?.hide()
 
         listView = findViewById(R.id.firstListView)
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1)
