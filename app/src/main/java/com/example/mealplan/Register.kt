@@ -33,7 +33,7 @@ class Register : AppCompatActivity() {
         passwordEditText = findViewById(R.id.Password1)
         confirmPasswordEditText = findViewById(R.id.ConfirmPassword)
         registerButton = findViewById(R.id.confirm1)
-
+//HELLO
         // Initialize Firebase Authentication and Firestore instances
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
