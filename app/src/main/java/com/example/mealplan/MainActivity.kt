@@ -3,6 +3,7 @@ package com.example.mealplan
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 
 class  MainActivity : AppCompatActivity() {
@@ -13,11 +14,10 @@ class  MainActivity : AppCompatActivity() {
 
 
 
-        val buttonClick = findViewById<Button>(R.id.PressToContinue)
-        buttonClick.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
+        Handler().postDelayed({
+            startActivity(Intent(this@MainActivity, Login::class.java))
+            finish()
+        }, 4000)
 
 
        // val buttonClick1 = findViewById<Button>(R.id.button7)
