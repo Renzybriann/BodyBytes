@@ -42,7 +42,7 @@ class GetWeeklyAverage : AppCompatActivity() {
         setContentView(R.layout.activity_get_weekly_average)
         supportActionBar?.hide()
 
-// Find the line chart UI element by its ID
+
         lineChart = findViewById(R.id.chart)
 
         // Create an empty array to hold the data
