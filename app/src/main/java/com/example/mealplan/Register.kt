@@ -103,7 +103,7 @@ class Register : AppCompatActivity() {
                                             finish()
                                         } else {
                                             // Display an error message
-                                            val errorMessage = loginTask.exception?.message ?: "Login failed"
+                                            val errorMessage = "Invalid email"
                                             Toast.makeText(
                                                 applicationContext,
                                                 errorMessage,
