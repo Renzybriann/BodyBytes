@@ -28,6 +28,7 @@ class WeightCompare : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weight_compare)
+        supportActionBar?.hide()
 
         val buttonClick = findViewById<Button>(R.id.progress)
         buttonClick.setOnClickListener {

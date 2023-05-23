@@ -26,7 +26,7 @@ class UserBmi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_bmi)
-
+        supportActionBar?.hide()
 
         weightEditText = findViewById(R.id.InsertWeight)
         heightEditText = findViewById(R.id.InsertHeight)

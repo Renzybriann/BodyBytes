@@ -29,7 +29,7 @@ class Chart : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart)
-
+        supportActionBar?.hide()
 
         // Find the line chart UI element by its ID
         lineChart = findViewById(R.id.chart)

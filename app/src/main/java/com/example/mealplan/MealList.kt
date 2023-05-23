@@ -24,6 +24,7 @@ class MealList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meal_list)
+        supportActionBar?.hide()
 
         val buttonClick = findViewById<Button>(R.id.PressToContinue)
         buttonClick.setOnClickListener {

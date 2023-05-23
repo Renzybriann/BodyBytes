@@ -18,6 +18,7 @@ class MealPlanInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meal_plan_info)
+        supportActionBar?.hide()
 
         // Initialize Firebase components
         auth = FirebaseAuth.getInstance()
