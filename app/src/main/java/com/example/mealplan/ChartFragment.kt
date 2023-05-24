@@ -1,11 +1,14 @@
 package com.example.mealplan
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -19,7 +22,8 @@ class ChartFragment : Fragment() {
     private val TAG = "Chart"
     private lateinit var dailyLineChart: LineChart
     private lateinit var weeklyLineChart: LineChart
-
+    private lateinit var submitButton: Button
+    private lateinit var weightEditText: EditText
     // Get an instance of the Firestore database
     private val db = FirebaseFirestore.getInstance()
 
@@ -34,7 +38,7 @@ class ChartFragment : Fragment() {
         val vieww = inflater.inflate(R.layout.fragment_chart, container, false)
 
         dailyLineChart = vieww.findViewById(R.id.daily_progress_chart)
-
+        weeklyLineChart = vieww.findViewById(R.id.weekly_progress_chart)
         // Create an empty array to hold the data
         val usersData = mutableListOf<Map<String, Any>>()
 
@@ -82,12 +86,7 @@ class ChartFragment : Fragment() {
                 Log.w(TAG, "Error getting documents: ", exception)
             }
 
-
-
-
         //weekly chart
-
-        weeklyLineChart = vieww.findViewById(R.id.weekly_progress_chart)
 
         // Create an empty array to hold the data
 
@@ -153,8 +152,55 @@ class ChartFragment : Fragment() {
                 Log.w(TAG, "Error getting documents: ", exception)
             }
 
+        weightEditText = vieww.findViewById(R.id.input_text)
+        submitButton = vieww.findViewById(R.id.compare_button)
+        submitButton.setOnClickListener {
+            // Get the weight input from the user
+            val weight = weightEditText.text.toString().toDoubleOrNull()
+            dailyLineChart.notifyDataSetChanged()
+            weeklyLineChart.notifyDataSetChanged()
+            if (weight != null) {
+                // Retrieve the user's weight data from Firestore
+                db.collection("users").document(user?.uid ?: "").collection("weights")
+                    .orderBy("timestamp")
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        // Convert the retrieved documents to a list of weights
+                        val weightsList = documents.mapNotNull { it.getDouble("weight") }
+
+                        if (weightsList.isNotEmpty()) {
+                            // If there are existing weight records, compare the latest with the inputted weight
+                            val latestWeight = weightsList.last()
+                            val difference = latestWeight - weight
+                            showPrompt("Latest weight: $latestWeight\n" +
+                                    "Inputted weight: $weight\n" +
+                                    "Difference: $difference")
+
+                        } else {
+                            // If there are no existing weight records, show a message to the user
+                            showPrompt("This is your first weight record data. " +
+                                    "There is nothing to compare.")
+                        }
+
+                        // Add the inputted weight to the user's weight records in Firestore
+                        db.collection("users").document(user?.uid ?: "").collection("weights")
+                            .add(hashMapOf("weight" to weight, "timestamp" to System.currentTimeMillis()))
+                    }
+            }
+        }
+
+
+
+
         return vieww
     }
+    private fun showPrompt(message: String) {
+        val alertDialog = AlertDialog.Builder(requireContext())
+            .setTitle("Note")
+            .setMessage(message)
+            .create()
 
+        alertDialog.show()
+    }
 
 }

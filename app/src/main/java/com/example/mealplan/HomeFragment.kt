@@ -3,6 +3,7 @@ package com.example.mealplan
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
@@ -23,7 +25,9 @@ class HomeFragment : Fragment() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var currentUserUid: String
     private lateinit var createplan: Button
-
+    private lateinit var db: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firstNameTextView: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -34,10 +38,13 @@ class HomeFragment : Fragment() {
         adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1)
         listView.adapter = adapter
 
+        firstNameTextView = vieww.findViewById(R.id.user_name_txt)
         firestore = FirebaseFirestore.getInstance()
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
 
-        val currentUser = FirebaseAuth.getInstance().currentUser
-        currentUserUid = currentUser?.uid ?: ""
+        val currentUserr = FirebaseAuth.getInstance().currentUser
+        currentUserUid = currentUserr?.uid ?: ""
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             val selectedItem = adapter.getItem(position)
@@ -73,6 +80,54 @@ class HomeFragment : Fragment() {
 
             adapter.notifyDataSetChanged()
         }
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val uid = currentUser.uid
+
+            // Retrieve first name and last name from Firestore
+            db.collection("users")
+                .document(uid)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val firstName = document.getString("first_name")
+
+                        // Set first name and last name to separate TextViews
+                        firstNameTextView.text = firstName
+
+                        // Retrieve user info from the subcollection "userinfos"
+                        db.collection("users")
+                            .document(uid)
+                            .collection("userinfos")
+                            .document("agedata")
+                            .get()
+                            .addOnSuccessListener { document ->
+                                if (document != null) {
+
+
+
+                                } else {
+                                    Log.d(Settings.TAG, "No such document")
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.d(Settings.TAG, "get failed with ", exception)
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.d(Settings.TAG, "get failed with ", exception)
+                            }
+                    } else {
+                        Log.d(Settings.TAG, "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(Settings.TAG, "get failed with ", exception)
+                }
+        }
+
+
+
 
         return vieww
     }

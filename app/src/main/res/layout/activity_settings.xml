@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +11,9 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="First Name"
-      android:textSize="16sp" />
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="231dp"
+      tools:layout_editor_absoluteY="159dp" />
 
 
   <TextView
@@ -20,7 +22,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/FIRSTNAMES1"
       android:text="Last Name"
-      android:textSize="16sp" />
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="73dp"
+      tools:layout_editor_absoluteY="78dp" />
 
   <TextView
       android:id="@+id/FULLNAMES"
@@ -28,7 +32,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/LASTNAMES2"
       android:text="Full Name"
-      android:textSize="16sp" />
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="46dp"
+      tools:layout_editor_absoluteY="181dp" />
 
 
   <TextView
@@ -37,8 +43,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/LASTNAMES2"
       android:text="Age"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="239dp"
+      tools:layout_editor_absoluteY="424dp" />
 
   <TextView
       android:id="@+id/DAYS1_1"
@@ -46,8 +53,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/AGE1"
       android:text="Day"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="309dp"
+      tools:layout_editor_absoluteY="311dp" />
 
   <TextView
       android:id="@+id/MONTHS1"
@@ -55,8 +63,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/DAYS1_1"
       android:text="Month"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="106dp"
+      tools:layout_editor_absoluteY="389dp" />
 
   <TextView
       android:id="@+id/YEARS1"
@@ -64,8 +73,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/MONTHS1"
       android:text="Year"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="277dp"
+      tools:layout_editor_absoluteY="253dp" />
 
   <TextView
       android:id="@+id/BMI"
@@ -73,8 +83,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/YEARS1"
       android:text="BMI"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="191dp"
+      tools:layout_editor_absoluteY="221dp" />
 
   <TextView
       android:id="@+id/HEIGHT"
@@ -82,8 +93,9 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/BMI"
       android:text="Height"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="59dp"
+      tools:layout_editor_absoluteY="311dp" />
 
   <TextView
       android:id="@+id/WEIGHT"
@@ -91,14 +103,17 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/HEIGHT"
       android:text="Weight"
-      android:textSize="16sp" />
-
+      android:textSize="16sp"
+      tools:layout_editor_absoluteX="210dp"
+      tools:layout_editor_absoluteY="78dp" />
 
   <Button
       android:id="@+id/LOGOUT"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/WEIGHT"
-      android:text="Logout" />
+      android:text="Logout"
+      tools:layout_editor_absoluteX="174dp"
+      tools:layout_editor_absoluteY="341dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

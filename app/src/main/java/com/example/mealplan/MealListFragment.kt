@@ -38,6 +38,12 @@ class MealListFragment : Fragment() {
             loadFragment(MealPlanDateFragment())
         }
 
+        val back_btn = vieww.findViewById<Button>(R.id.back_btn)
+        back_btn.setOnClickListener {
+            loadFragment(HomeFragment())
+        }
+
+
         listView = vieww.findViewById(R.id.listView)
         searchView = vieww.findViewById(R.id.searchView)
 

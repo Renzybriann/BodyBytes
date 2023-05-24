@@ -131,6 +131,6 @@ class Settings : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "ProfileActivity"
+        const val TAG = "ProfileActivity"
     }
 }

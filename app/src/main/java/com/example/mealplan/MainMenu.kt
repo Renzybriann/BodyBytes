@@ -2,6 +2,8 @@ package com.example.mealplan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -10,7 +12,7 @@ class  MainMenu : AppCompatActivity() {
 
 
     private lateinit var auth: FirebaseAuth
-
+    private var doubleBackToExitPressedOnce = false
     lateinit var bottomNav : BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,8 @@ class  MainMenu : AppCompatActivity() {
                 else -> {throw IllegalStateException("Fragment is not loading")}
             }
         }
+
+        
         // Initialize logout button and set listener
 //        val buttonClick2 = findViewById<Button>(R.id.SETTERS)
 //        buttonClick2.setOnClickListener {
@@ -70,5 +74,16 @@ class  MainMenu : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_container,fragment)
         transaction.commit()
+    }
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+
+        Handler(Looper.getMainLooper()).postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }
 }

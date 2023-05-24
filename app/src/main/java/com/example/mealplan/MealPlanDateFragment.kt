@@ -36,6 +36,12 @@ class MealPlanDateFragment : Fragment() {
         nameInput = vieww.findViewById(R.id.nameInput)
         submitButton = vieww.findViewById(R.id.submitButton)
 
+        val back_btn = vieww.findViewById<Button>(R.id.back_btn)
+        back_btn.setOnClickListener {
+            loadFragment(HomeFragment())
+        }
+
+
         submitButton.setOnClickListener {
             val date = dateInput.text.toString().trim()
             val month = monthInput.text.toString().trim()
@@ -223,6 +229,12 @@ class MealPlanDateFragment : Fragment() {
 
 
     private fun moveToNextActivity(fragment: Fragment) {
+        val transaction = parentFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_container,fragment)
+        transaction.commit()
+    }
+
+    private  fun loadFragment(fragment: Fragment){
         val transaction = parentFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_container,fragment)
         transaction.commit()

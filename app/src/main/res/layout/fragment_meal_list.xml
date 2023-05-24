@@ -23,6 +23,9 @@
             android:layout_marginTop="30dp"
             android:text="Create Meal Plan"
             android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +39,7 @@
             android:layout_marginRight="25dp"
             android:iconifiedByDefault="false"
             android:queryHint="Search Food"
+            android:background="@drawable/editext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -44,9 +48,11 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:text="Select the food you want to add and choose the meal time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,20 +67,43 @@
             android:layout_marginRight="25dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/add_meal_plan_btn"
+            app:layout_constraintBottom_toTopOf="@+id/btns"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-        <Button
-            android:id="@+id/add_meal_plan_btn"
-            android:layout_width="150dp"
+
+        <LinearLayout
+            android:id="@+id/btns"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="next"
             android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/back_btn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="back" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/add_meal_plan_btn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="next"
+                />
+
+        </LinearLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

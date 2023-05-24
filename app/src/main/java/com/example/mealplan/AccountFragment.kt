@@ -1,59 +1,147 @@
 package com.example.mealplan
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private lateinit var db: FirebaseFirestore
+private lateinit var auth: FirebaseAuth
+private lateinit var firstNameTextView: TextView
+//private lateinit var lastNameTextView: TextView
+private lateinit var ageTextView: TextView
+private lateinit var birthdayDayTextView: TextView
+private lateinit var birthdayMonthTextView: TextView
+private lateinit var birthdayYearTextView: TextView
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AccountFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+private lateinit var bmiTextView: TextView
+private lateinit var heightTextView: TextView
+private lateinit var weightTextView: TextView
+private lateinit var logoutButton: Button
+
 class AccountFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+        val vieww = inflater.inflate(R.layout.fragment_account, container, false)
+
+
+        db = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
+
+        firstNameTextView = vieww.findViewById(R.id.FIRSTNAMES1)
+//        lastNameTextView = vieww.findViewById(R.id.LASTNAMES2)
+        ageTextView = vieww.findViewById(R.id.AGE1)
+        birthdayDayTextView = vieww.findViewById(R.id.DAYS1_1)
+        birthdayMonthTextView = vieww.findViewById(R.id.MONTHS1)
+        birthdayYearTextView = vieww.findViewById(R.id.YEARS1)
+        heightTextView = vieww.findViewById(R.id.HEIGHT)
+        weightTextView = vieww.findViewById(R.id.WEIGHT)
+
+        logoutButton = vieww.findViewById(R.id.LOGOUT)
+        logoutButton.setOnClickListener {
+            // Sign out the user and send them back to the login activity
+            auth.signOut()
+            val intent = Intent(requireActivity(), Login::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val uid = currentUser.uid
+
+            // Retrieve first name and last name from Firestore
+            db.collection("users")
+                .document(uid)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val firstName = document.getString("first_name")
+                        val lastName = document.getString("last_name")
+
+                        // Set first name and last name to a single TextView
+                        val nameTextView = vieww.findViewById<TextView>(R.id.FULLNAMES)
+                        nameTextView.text = "$firstName $lastName"
+
+                        // Set first name and last name to separate TextViews
+                        firstNameTextView.text = firstName
+//                        lastNameTextView.text = lastName
+
+                        // Retrieve user info from the subcollection "userinfos"
+                        db.collection("users")
+                            .document(uid)
+                            .collection("userinfos")
+                            .document("agedata")
+                            .get()
+                            .addOnSuccessListener { document ->
+                                if (document != null) {
+                                    val age = document.getLong("age")?.toInt()
+                                    val birthdayDay = document.getLong("birthdayDay")?.toInt()
+                                    val birthdayMonth = document.getLong("birthdayMonth")?.toInt()
+                                    val birthdayYear = document.getLong("birthdayYear")?.toInt()
+
+                                    // Set age, birthday day, month, and year to separate TextViews
+                                    ageTextView.text = age?.toString() ?: "N/A"
+                                    birthdayDayTextView.text = birthdayDay?.toString() ?: "N/A"
+                                    birthdayMonthTextView.text = birthdayMonth?.toString() ?: "N/A"
+                                    birthdayYearTextView.text = birthdayYear?.toString() ?: "N/A"
+                                } else {
+                                    Log.d(Settings.TAG, "No such document")
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.d(Settings.TAG, "get failed with ", exception)
+                            }
+
+                        // Retrieve BMI data from the "bmidata" document
+                        db.collection("users")
+                            .document(uid)
+                            .collection("userinfos")
+                            .document("bmidata")
+                            .get()
+                            .addOnSuccessListener { document ->
+                                if (document != null) {
+                                    val bmi = document.getDouble("bmi")?.toString() ?: "N/A"
+                                    val height = document.getDouble("height")?.toString() ?: "N/A"
+                                    val weight = document.getDouble("weight")?.toString() ?: "N/A"
+
+                                    // Set BMI, height, and weight to separate TextViews
+                                    heightTextView.text = "$height m"
+                                    weightTextView.text = "$weight kg"
+                                } else {
+                                    Log.d(Settings.TAG, "No such document")
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.d(Settings.TAG, "get failed with ", exception)
+                            }
+                    } else {
+                        Log.d(Settings.TAG, "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(Settings.TAG, "get failed with ", exception)
+                }
+        }
+
+
+
+
+        return vieww
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AccountFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        const val TAG = "ProfileActivity"
     }
 }
