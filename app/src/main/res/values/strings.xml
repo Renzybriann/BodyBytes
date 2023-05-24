@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MealPlan</string>
+    <string name="app_name">BodyBytes</string>
     <string name="welcome">The ultimate meal plan app designed to \n revolutionize your approach to healthy eating \n and nutrition. With BodyBytes, achieving your \n wellness goals has never been easier or more \n convenient</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
