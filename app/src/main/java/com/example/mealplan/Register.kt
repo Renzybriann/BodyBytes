@@ -8,6 +8,7 @@ import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.text.TextUtils
+import android.widget.TextView
 import android.widget.Toast
 
 
@@ -20,7 +21,7 @@ class Register : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
-    private lateinit var registerButton: Button
+    private lateinit var registerButton: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

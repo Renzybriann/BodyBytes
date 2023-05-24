@@ -15,7 +15,7 @@ class UserBmi : AppCompatActivity() {
 
     private lateinit var weightEditText: EditText
     private lateinit var heightEditText: EditText
-    private lateinit var submitButton: Button
+    private lateinit var submitButton: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var birthdayDayEditText: EditText

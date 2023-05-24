@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 
 private lateinit var auth: FirebaseAuth
@@ -22,7 +23,7 @@ class LoginOrSignup : AppCompatActivity() {
         }
 
         val login_prompt = findViewById<Button>(R.id.login_prompt)
-        val signup_prompt = findViewById<Button>(R.id.signup_prompt)
+        val signup_prompt = findViewById<TextView>(R.id.signup_prompt)
 
         login_prompt.setOnClickListener {
             val intent = Intent(this, Login::class.java)

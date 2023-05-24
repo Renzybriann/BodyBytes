@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="@+id/signup_prompt"
         app:layout_constraintStart_toStartOf="@+id/signup_prompt" />
 
-    <Button
+    <TextView
         android:id="@+id/signup_prompt"
         android:layout_width="match_parent"
         android:layout_height="54dp"
@@ -73,7 +73,10 @@
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/button_login"
-        android:text="Sign up"
+        android:paddingTop="17dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -16,7 +18,7 @@ class UserAge : AppCompatActivity() {
     private lateinit var birthdayMonthEditText: EditText
     private lateinit var birthdayYearEditText: EditText
     private lateinit var ageEditText: EditText
-    private lateinit var submitButton: Button
+    private lateinit var submitButton: TextView
 
     private val db = FirebaseFirestore.getInstance()
     private val currentUser = FirebaseAuth.getInstance().currentUser
@@ -32,6 +34,7 @@ class UserAge : AppCompatActivity() {
         birthdayYearEditText = findViewById(R.id.Year1)
         ageEditText = findViewById(R.id.Age1)
         submitButton = findViewById(R.id.Submission)
+
 
         submitButton.setOnClickListener {
             val birthdayDay = birthdayDayEditText.text.toString().toIntOrNull()

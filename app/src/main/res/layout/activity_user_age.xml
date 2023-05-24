@@ -26,11 +26,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="76dp"
+        android:layout_marginBottom="30dp"
         android:textColor="@color/black"
-        android:text="Birthday (1/1/200)"
+        android:textStyle="bold"
+        android:text="Birthday (1/1/2023)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dayHint"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
@@ -123,13 +126,12 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="48dp"
         android:layout_marginRight="25dp"
-        android:paddingLeft="10dp"
         android:background="@drawable/editext"
-        app:layout_constraintBottom_toTopOf="@+id/Submission"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/ageHint"
@@ -143,18 +145,32 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Age1" />
 
-    <Button
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Please fill out the needed information"
+        app:layout_constraintBottom_toTopOf="@+id/Submission"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
         android:id="@+id/Submission"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/button_login"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/button_black"
+        android:paddingTop="17dp"
         android:text="Submit"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

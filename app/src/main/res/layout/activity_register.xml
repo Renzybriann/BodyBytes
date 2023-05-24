@@ -156,14 +156,18 @@
         app:layout_constraintTop_toBottomOf="@+id/ConfirmPassword"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <TextView
         android:id="@+id/confirm1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/button_black"
+        android:paddingTop="17dp"
         android:text="Sign up"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
